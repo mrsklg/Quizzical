@@ -498,7 +498,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Intro(props) {
     return _react2.default.createElement(
         "div",
-        null,
+        { className: "start" },
         _react2.default.createElement(
             "h1",
             null,
@@ -553,13 +553,13 @@ function Question(_ref) {
         var decodedAnswer = (0, _htmlEntities.decode)(answ);
         if (answered) {
             isDisabled = true;
-            if (decodedAnswer != correct_answer) {
+            if (answ === correct_answer) {
+                answClass = "correct-answ";
+            } else {
                 answClass = "unchecked-answ";
-                if (decodedAnswer == selectedAnswer) {
+                if (answ === selectedAnswer) {
                     answClass += " incorrect-answ";
                 }
-            } else if (decodedAnswer == correct_answer) {
-                answClass = "correct-answ";
             }
         }
 

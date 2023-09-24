@@ -77,7 +77,7 @@ export default function Quiz({ resetQuiz }) {
             {
                 questions.every(q => q.answered) && quizFinished
                     ? (
-                        <div className="footer">
+                        <div>
                             <p className="question">
                                 You scored {
                                     questions.filter(q => q.correct_answer === q.selectedAnswer).length}/{questions.length} correct answers
