@@ -412,22 +412,42 @@ var _Quiz2 = _interopRequireDefault(_Quiz);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function App() {
     var _React$useState = _react2.default.useState(false),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         quizStarted = _React$useState2[0],
         setQuizStarted = _React$useState2[1];
 
+    var _React$useState3 = _react2.default.useState({ num_of_questions: 5 }),
+        _React$useState4 = _slicedToArray(_React$useState3, 2),
+        quizOptions = _React$useState4[0],
+        setQuizOptions = _React$useState4[1];
+
     function toggleStart() {
+        if (quizStarted) {
+            setQuizOptions({ num_of_questions: 5 });
+        }
         setQuizStarted(function (prevQuizStarted) {
             return !prevQuizStarted;
+        });
+    }
+
+    function changeOptions(e) {
+        var _e$target = e.target,
+            name = _e$target.name,
+            value = _e$target.value;
+
+        setQuizOptions(function (prevQuizOptions) {
+            return Object.assign(prevQuizOptions, _defineProperty({}, name, value));
         });
     }
 
     return _react2.default.createElement(
         "main",
         null,
-        quizStarted ? _react2.default.createElement(_Quiz2.default, { resetQuiz: toggleStart }) : _react2.default.createElement(_Intro2.default, { handleClick: toggleStart })
+        quizStarted ? _react2.default.createElement(_Quiz2.default, { resetQuiz: toggleStart, quizOptions: quizOptions }) : _react2.default.createElement(_Intro2.default, { handleChange: changeOptions, handleClick: toggleStart })
     );
 }
 
@@ -510,9 +530,188 @@ function Intro(props) {
             "Try yourself in a trivia quiz!!"
         ),
         _react2.default.createElement(
-            "button",
-            { className: "btn", onClick: props.handleClick },
-            "Start Quiz"
+            "div",
+            { className: "options-container" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "num_of_questions" },
+                "Number of questions:"
+            ),
+            _react2.default.createElement("input", {
+                type: "text",
+                id: "num_of_questions",
+                name: "num_of_questions",
+                placeholder: "Default number of questions is 5",
+                onChange: props.handleChange
+            }),
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "category" },
+                "Select category"
+            ),
+            _react2.default.createElement(
+                "select",
+                { id: "category", name: "category", onChange: props.handleChange },
+                _react2.default.createElement(
+                    "option",
+                    { value: "" },
+                    "Any Category"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "9" },
+                    "General Knowledge"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "10" },
+                    "Entertainment: Books"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "11" },
+                    "Entertainment: Film"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "12" },
+                    "Entertainment: Music"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "13" },
+                    "Entertainment: Musicals & Theatres"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "14" },
+                    "Entertainment: Television"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "15" },
+                    "Entertainment: Video Games"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "16" },
+                    "Entertainment: Board Games"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "17" },
+                    "Science & Nature"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "18" },
+                    "Science: Computers"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "19" },
+                    "Science: Mathematics"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "20" },
+                    "Mythology"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "21" },
+                    "Sports"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "22" },
+                    "Geography"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "23" },
+                    "History"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "24" },
+                    "Politics"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "25" },
+                    "Art"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "26" },
+                    "Celebrities"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "27" },
+                    "Animals"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "28" },
+                    "Vehicles"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "29" },
+                    "Entertainment: Comics"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "30" },
+                    "Science: Gadgets"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "31" },
+                    "Entertainment: Japanese Anime & Manga"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "32" },
+                    "Entertainment: Cartoon & Animations"
+                )
+            ),
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "difficulty" },
+                "Select difficulty"
+            ),
+            _react2.default.createElement(
+                "select",
+                { id: "difficulty", name: "difficulty", onChange: props.handleChange },
+                _react2.default.createElement(
+                    "option",
+                    { value: "" },
+                    "Any difficulty"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "easy" },
+                    "Easy"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "medium" },
+                    "Medium"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "hard" },
+                    "Hard"
+                )
+            ),
+            _react2.default.createElement(
+                "button",
+                { className: "btn", onClick: props.handleClick },
+                "Start Quiz"
+            )
         )
     );
 }
@@ -632,7 +831,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function Quiz(_ref) {
-    var resetQuiz = _ref.resetQuiz;
+    var resetQuiz = _ref.resetQuiz,
+        quizOptions = _ref.quizOptions;
 
     var _React$useState = _react2.default.useState(false),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -644,8 +844,16 @@ function Quiz(_ref) {
         questions = _React$useState4[0],
         setQuestions = _React$useState4[1];
 
+    var num_of_questions = quizOptions.num_of_questions,
+        category = quizOptions.category,
+        difficulty = quizOptions.difficulty;
+
+    var amount = "amount=" + num_of_questions;
+    var categoryOption = category ? "&category=" + category : '';
+    var difficultyOption = difficulty ? "&difficulty=" + difficulty : '';
+
     _react2.default.useEffect(function () {
-        fetch("https://opentdb.com/api.php?amount=5").then(function (res) {
+        fetch("https://opentdb.com/api.php?" + amount + categoryOption + difficultyOption).then(function (res) {
             return res.json();
         }).then(function (data) {
             return data.results;
@@ -722,7 +930,7 @@ function Quiz(_ref) {
             return q.answered;
         }) && quizFinished ? _react2.default.createElement(
             "div",
-            null,
+            { className: "footer" },
             _react2.default.createElement(
                 "p",
                 { className: "question" },
@@ -741,7 +949,7 @@ function Quiz(_ref) {
             )
         ) : _react2.default.createElement(
             "button",
-            { className: "btn", onClick: checkAnswers },
+            { className: "btn", onClick: checkAnswers, disabled: !quizFinished },
             "Check answers"
         )
     );

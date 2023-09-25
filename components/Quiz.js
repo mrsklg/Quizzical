@@ -2,12 +2,17 @@ import React from "react"
 import Question from "./Question"
 import { nanoid } from "nanoid"
 
-export default function Quiz({ resetQuiz }) {
+export default function Quiz({ resetQuiz, quizOptions }) {
     const [quizFinished, setQuizFinished] = React.useState(false)
     const [questions, setQuestions] = React.useState([])
 
+    const { num_of_questions, category, difficulty } = quizOptions
+    const amount = `amount=${num_of_questions}`
+    const categoryOption = category ? `&category=${category}` : ''
+    const difficultyOption = difficulty ? `&difficulty=${difficulty}` : ''
+
     React.useEffect(() => {
-        fetch("https://opentdb.com/api.php?amount=5")
+        fetch(`https://opentdb.com/api.php?${amount}${categoryOption}${difficultyOption}`)
             .then(res => res.json())
             .then(data => data.results)
             .then(questions => setQuestions(questions.map(question => {
@@ -77,7 +82,7 @@ export default function Quiz({ resetQuiz }) {
             {
                 questions.every(q => q.answered) && quizFinished
                     ? (
-                        <div>
+                        <div className="footer">
                             <p className="question">
                                 You scored {
                                     questions.filter(q => q.correct_answer === q.selectedAnswer).length}/{questions.length} correct answers
@@ -85,7 +90,7 @@ export default function Quiz({ resetQuiz }) {
                             <button className="btn" onClick={resetQuiz}>Play again</button>
                         </div>
                     )
-                    : <button className="btn" onClick={checkAnswers}>Check answers</button>}
+                    : <button className="btn" onClick={checkAnswers} disabled={!quizFinished}>Check answers</button>}
         </section>
     )
 }

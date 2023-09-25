@@ -4,8 +4,8 @@
 }
 
 body {
-    background: url("./images/intro-page.jpg");
-    background-color: #F5F7FB;
+    background: url("./images/bg1.jpg");
+    background-color: #DBF5FA;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Inter', sans-serif;
@@ -35,23 +35,60 @@ h1 {
     margin: 5px 0 30px;
 }
 
+.start > .description {
+    text-align: center;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 350px;
+    max-width: 300px;
+}
+
+.options-container > label {
+    border: none;
+    margin-top: 10px;
+    background: none;
+}
+
+.options-container > input,
+.options-container > select {
+    width: 300px;
+    background: none;
+    border: 1px solid #03045E;
+    color: #03045E;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
+.options-container > .btn {
+    margin-top: 20px;
+}
+
 .btn {
     border-radius: 15px;
-    background: #4D5B9E;
+    background: #023E8A;
     width: 190px;
     margin: 0 auto;
     height: 50px;
     border: none;
-    color: #F5F7FB;
+    color: #DBF5FA;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     margin-bottom: 30px;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 .start-btn:hover,
 .check-btn:hover {
-    background: #6e7bb8;
+    background: #03045E;
 }
 
 .quiz-container {
@@ -84,7 +121,7 @@ h1 {
 }
 
 hr {
-    border: 1px solid #DBDEF0;
+    border: 1px solid #293264;
 }
 
 label {
@@ -92,14 +129,14 @@ label {
     z-index: 90;
     text-align: center;
     border-radius: 12px;
-    border: 1px solid #4D5B9E;
+    border: 1px solid #023E8A;
     color: #293264;
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
     padding: 4px 8px;
     word-break: break-all;
-    background: #F5F7FB;
+    background: #DBF5FA;
 }
 
 input[type="radio"] {
@@ -110,8 +147,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked+label {
-    background: #D6DBF5;
-    border: 1px solid #F5F7FB;
+    background: #48CAE4;
+    border: 1px solid #48CAE4;
 }
 
 input[type="radio"]:checked:hover+label {
@@ -129,20 +166,27 @@ input[type="radio"].correct-answ+label {
 }
 
 input[type="radio"].unchecked-answ+label {
-    border: 1px solid #4D5B9E;
-    color: #4D5B9E;
+    border: 1px solid #023E8A;
+    color: #023E8A;
+    text-shadow: 0.1px 0.1px 0 #03045E;
     opacity: 0.5;
     cursor: default;
     background: none;
 }
 
 input[type="radio"].incorrect-answ+label {
-    background: #F8BCBC;
-    border: 1px solid #F8BCBC;
+    background: #FFC9C9;
+    border: 1px solid #FFC9C9;
 }
 
 input[type="radio"].correct-answ:hover+label,
 input[type="radio"].unchecked-answ:hover+label,
 input[type="radio"].incorrect-answ:hover+label {
     box-shadow: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 }
