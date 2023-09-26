@@ -1,28 +1,17 @@
-# co08a4e98b3b3394ecd36f363
+# Quizzical
 
-Quick start:
+# About 
 
-```
-$ yarn # npm install
-$ yarn build # npm run build
-````
+This is a project of a quiz app that allows the user to test themselves in a trivia test. The user can choose the number of questions and select their difficulty and category. After answering all of the questions, the user can check the answers and see their result.
+<br><br>
+The app is built using HTML 5, CSS 3, JavaScript and React. Questions are pulled from the Open Trivia Database (https://opentdb.com/).
 
-## Development
+# Link
 
-Run Webpack in watch-mode to continually compile the JavaScript as you work:
+**https://stately-malabi-08b2f6.netlify.app/**
 
-```
-$ yarn watch # npm run watch
-```
+# Screenshots
 
-## About Scrimba
-
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
-
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
-
-Happy Coding!
+![image](https://github.com/mrsklg/Quizzical/assets/100710286/f6862937-fb1d-484f-9071-e204e7312db3)
+![image](https://github.com/mrsklg/Quizzical/assets/100710286/18be614c-5cce-4a15-af53-698235ade622)
+![image](https://github.com/mrsklg/Quizzical/assets/100710286/0015474a-4094-407c-b1e0-191645692c34)
