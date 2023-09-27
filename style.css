@@ -61,7 +61,11 @@ h1 {
     border: 1px solid #03045E;
     color: #03045E;
     border-radius: 3px;
-    padding: 3px 5px;
+    padding: 10px 8px;
+}
+
+.options-container > input::placeholder {
+    color: #a0a0fa;
 }
 
 .options-container > .btn {

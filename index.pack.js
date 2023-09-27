@@ -848,7 +848,8 @@ function Quiz(_ref) {
         category = quizOptions.category,
         difficulty = quizOptions.difficulty;
 
-    var amount = "amount=" + num_of_questions;
+
+    var amount = "amount=" + (parseInt(num_of_questions) || 5);
     var categoryOption = category ? "&category=" + category : '';
     var difficultyOption = difficulty ? "&difficulty=" + difficulty : '';
 

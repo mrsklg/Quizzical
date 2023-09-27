@@ -7,7 +7,8 @@ export default function Quiz({ resetQuiz, quizOptions }) {
     const [questions, setQuestions] = React.useState([])
 
     const { num_of_questions, category, difficulty } = quizOptions
-    const amount = `amount=${num_of_questions}`
+
+    const amount = `amount=${parseInt(num_of_questions) || 5}`
     const categoryOption = category ? `&category=${category}` : ''
     const difficultyOption = difficulty ? `&difficulty=${difficulty}` : ''
 
