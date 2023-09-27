@@ -2,7 +2,7 @@
 
 # About 
 
-This is a project of a quiz app that allows the user to test themselves in a trivia test. The user can choose the number of questions and select their difficulty and category. After answering all of the questions, the user can check the answers and see their result.
+This is a project of a quiz app that allows user to test themselves in a trivia test. The user can choose the number of questions and select their difficulty and category. After answering all of the questions, the user can check the answers and see their result.
 <br><br>
 The app is built using HTML 5, CSS 3, JavaScript and React. Questions are pulled from the Open Trivia Database (https://opentdb.com/).
 
